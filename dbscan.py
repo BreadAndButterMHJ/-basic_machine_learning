@@ -45,12 +45,18 @@ class DBSCAN():
 
 
 from sklearn.datasets import make_blobs
+from matplotlib import pyplot as plt
 
-# 生成数据
 data, _ = make_blobs(n_samples=100, centers=3, cluster_std=0.5, random_state=42)
 
-# 运行DBSCAN
 dbscan = DBSCAN(data, eps=0.5, min_samples=5)
 dbscan.fit()
-
-print(dbscan.labels)  # 输出每个点的簇标签
+color = ['r', 'g', 'b', 'y', 'c', 'm']
+plt.figure(1,figsize=(12,8))
+for idx,color in zip(np.unique(dbscan.labels),color):
+    if idx == -1:
+        plt.scatter(data[dbscan.labels==idx][:,0], data[dbscan.labels==idx][:,1], c='k',label='Noise')
+    else:
+        plt.scatter(data[dbscan.labels==idx][:,0], data[dbscan.labels==idx][:,1], c=color,label=f'Cluster {idx}')
+plt.legend()
+plt.show()
