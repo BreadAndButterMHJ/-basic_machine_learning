@@ -14,3 +14,4 @@
 - pca聚类代码
 
     pca聚类代码的详细说明可以查看[pca.md](/docs/pca.md)
+- SVM代码
