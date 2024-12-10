@@ -15,3 +15,5 @@
 
     pca聚类代码的详细说明可以查看[pca.md](/docs/pca.md)
 - SVM代码
+
+    SVM代码的详细说明可以查看[svm.md](/docs/svm.md)
